@@ -8,6 +8,6 @@ namespace Architect4Hire.netCore6ApiStarterDomainLayer
 {
     public interface IFacade
     {
-        Task<IEnumerable<string>> Fetch();
+        Task<List<string>> Fetch();
     }
 }

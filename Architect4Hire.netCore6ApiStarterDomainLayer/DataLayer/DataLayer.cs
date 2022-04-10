@@ -17,9 +17,9 @@ namespace Architect4Hire.netCore6ApiStarterDomainLayer.DataLayer
             _mediator = m;
         }
 
-        public Task<IEnumerable<string>> Fetch()
+        public async Task<List<string>> Fetch()
         {
-            _mediator.Send();
+            return new List<string>(); // _mediator.Send();
         }
     }
 }

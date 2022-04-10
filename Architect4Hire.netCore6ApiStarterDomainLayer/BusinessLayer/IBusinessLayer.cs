@@ -8,6 +8,6 @@ namespace Architect4Hire.netCore6ApiStarterDomainLayer.BusinessLayer
 {
     public interface IBusinessLayer
     {
-        Task<IEnumerable<string>> Fetch();
+        Task<List<string>> Fetch();
     }
 }

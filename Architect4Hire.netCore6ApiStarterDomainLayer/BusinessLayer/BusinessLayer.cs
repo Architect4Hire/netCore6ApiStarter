@@ -16,7 +16,7 @@ namespace Architect4Hire.netCore6ApiStarterDomainLayer.BusinessLayer
             _data = dl;
         }
 
-        public async Task<IEnumerable<string>> Fetch()
+        public async Task<List<string>> Fetch()
         {
             return await _data.Fetch();
         }

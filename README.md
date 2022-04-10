@@ -1,1 +1,1 @@
-# BuddyNetworks.Gallery
+# Architect4Hire.com .NET CORE 6 WEB API TEMPLATE (COSMOS,REDIS,JWT,CQRS)

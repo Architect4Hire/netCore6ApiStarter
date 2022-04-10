@@ -1,0 +1,8 @@
+﻿<Properties StartupConfiguration="{87377E22-9BE4-493E-984E-E0D4B38711A9}|BuddyNetworks.GalleryService">
+  <DisabledProjects>
+    <String>BuddyNetworks.GalleryService/BuddyNetworks.GalleryService.csproj</String>
+    <String>BuddyNetworks.GalleryServiceDomainLayer/BuddyNetworks.GalleryServiceDomainLayer.csproj</String>
+  </DisabledProjects>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Architect4Hire.netCore6ApiStarter PreferredExecutionTarget="/Applications/Google Chrome.app" />
+</Properties>

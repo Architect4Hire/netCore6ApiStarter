@@ -1,1 +1,1 @@
-# netCore6ApiStarter
+# BuddyNetworks.Gallery

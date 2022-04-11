@@ -1,4 +1,6 @@
 ﻿using Architect4Hire.netCore6ApiStarterDomainLayer;
+using Architect4Hire.netCore6ApiStarterDomainLayer.DataLayer.Commands;
+using Architect4Hire.netCore6ApiStarterDomainLayer.DataLayer.Querries;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -15,31 +17,38 @@ namespace Architect4Hire.netCore6ApiStarter.Controllers
             _facade = f;
         }
 
-        [HttpGet]
-        public async Task<IEnumerable<string>> Get()
+        [HttpPost]
+        public async Task<IActionResult> Create(CreateProductCommand command)
         {
-            return await _facade.Fetch();
+            return Ok(await _facade.Create(command));
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            return Ok(await _facade.FetchAll(new GetAllProductsQuery()));
         }
 
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task<IActionResult> GetById(int id)
         {
-            return "value";
-        }
-
-        [HttpPost]
-        public void Post([FromBody]string value)
-        {
-        }
-
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
-        {
+            return Ok(await _facade.Fetch(new GetProductByIdQuery { Id = id }));
         }
 
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
+            return Ok(await _facade.Delete(new DeleteProductByIdCommand { Id = id }));
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update(int id, UpdateProductCommand command)
+        {
+            if (id != command.Id)
+            {
+                return BadRequest();
+            }
+            return Ok(await _facade.Update(command));
         }
     }
 }

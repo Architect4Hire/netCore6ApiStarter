@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Architect4Hire.netCore6ApiStarterDomainLayer.DataLayer.Context
 {
-    public class ApplicationContext : DbContext
+    public class ApplicationContext : DbContext, IApplicationContext
     {
         public DbSet<Product> Products { get; set; }
         public ApplicationContext(DbContextOptions<ApplicationContext> options)
